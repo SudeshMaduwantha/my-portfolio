@@ -1,4 +1,4 @@
-// Define the particles configuration for dark theme
+// Dark theme particles configuration
 const particlesConfigDark = {
     "particles": {
         "number": {
@@ -44,7 +44,7 @@ const particlesConfigDark = {
         "line_linked": {
             "enable": true,
             "distance": 150,
-            "color": "#ffffff", // White linked lines for dark theme
+            "color": "#ffffff", // White lines for dark theme
             "opacity": 0.4,
             "width": 1
         },
@@ -68,11 +68,11 @@ const particlesConfigDark = {
         "events": {
             "onhover": {
                 "enable": true,
-                "mode": "grab" // Change this to "grab" for better interaction
+                "mode": "grab"
             },
             "onclick": {
                 "enable": true,
-                "mode": "push" // Particles push away on click
+                "mode": "push"
             },
             "resize": true
         },
@@ -105,7 +105,7 @@ const particlesConfigDark = {
     "retina_detect": true
 };
 
-// Define the particles configuration for light theme
+// Light theme particles configuration
 const particlesConfigLight = {
     "particles": {
         "number": {
@@ -151,7 +151,7 @@ const particlesConfigLight = {
         "line_linked": {
             "enable": true,
             "distance": 150,
-            "color": "#000000", // Black linked lines for light theme
+            "color": "#000000", // Black lines for light theme
             "opacity": 0.4,
             "width": 1
         },
@@ -175,11 +175,11 @@ const particlesConfigLight = {
         "events": {
             "onhover": {
                 "enable": true,
-                "mode": "grab" // Change this to "grab" for better interaction
+                "mode": "grab"
             },
             "onclick": {
                 "enable": true,
-                "mode": "push" // Particles push away on click
+                "mode": "push"
             },
             "resize": true
         },
@@ -212,23 +212,21 @@ const particlesConfigLight = {
     "retina_detect": true
 };
 
-// Function to initialize particles with a given config
-function loadParticlesConfig(config) {
-    particlesJS("particles-js", config);
-}
-
 // Initial load based on current theme
 if (document.body.classList.contains('dark-theme')) {
-    loadParticlesConfig(particlesConfigDark);
+    particlesJS("particles-js", particlesConfigDark);
 } else {
-    loadParticlesConfig(particlesConfigLight);
+    particlesJS("particles-js", particlesConfigLight);
 }
 
-// Add event listener to theme toggle button
+// Theme toggle handling
 document.getElementById('theme-button').addEventListener('click', () => {
     if (document.body.classList.contains('dark-theme')) {
-        loadParticlesConfig(particlesConfigDark);
+        particlesJS("particles-js", particlesConfigDark);
     } else {
-        loadParticlesConfig(particlesConfigLight);
+        particlesJS("particles-js", particlesConfigLight);
     }
 });
+
+
+
